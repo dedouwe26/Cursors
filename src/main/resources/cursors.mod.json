@@ -1,0 +1,31 @@
+{
+    "schemaVersion": 1,
+    "id": "cursors",
+    "version": "1.0.0",
+    "name": "Cursors",
+    "description": "Cursors is a Minecraft mod and library that adds custom cursors to GUIs.",
+    "authors": [
+        "0xDED"
+    ],
+    "contact": {
+        "homepage": "https://github.com/dedouwe26/Cursors",
+        "issues": "https://github.com/dedouwe26/Cursors/issues",
+        "sources": "https://github.com/dedouwe26/Cursors"
+    },
+    "icon": "assets/cursors/icon.png",
+    "license": "MIT",
+    "environment": "client",
+    "entrypoints": {
+        "client": [
+            "oxded.cursors.Cursors"
+        ]
+    },
+    "mixins": [
+        "cursors.client.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.16.10",
+        "minecraft": "1.21.x",
+        "java": ">=17"
+    }
+}
