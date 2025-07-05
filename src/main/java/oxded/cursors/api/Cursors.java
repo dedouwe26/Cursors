@@ -1,5 +1,8 @@
 package oxded.cursors.api;
 
+import org.lwjgl.glfw.GLFW;
+import org.lwjgl.glfw.GLFWImage;
+
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.texture.AbstractTexture;
@@ -33,6 +36,15 @@ public final class Cursors {
         grabCursor = textureManager.getTexture(GRAB_CURSOR);
         grabbingCursor = textureManager.getTexture(GRABBING_CURSOR);
         blockedCursor = textureManager.getTexture(BLOCKED_CURSOR);
+        // ResourcePack -> open
+        // Entity Model Features
+        // Icons, ResourceTexture.TextureData, ResourcePack, Window.setIcon, NativeImage, ResourceManager
+    }
+    private GLFWImage createGlfwImage() {
+
+    }
+    private long createGlfwCursor() {
+        GLFW.glfwCreateCursor(null, 0, 0); // xhot and yhot, data folder??
     }
 
     public static Window getWindow() {
