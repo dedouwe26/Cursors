@@ -1,0 +1,26 @@
+package oxded.cursors.api;
+
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.client.util.Window;
+import oxded.cursors.impl.CursorsImpl;
+
+@Environment(EnvType.CLIENT)
+public final class Cursors {
+    public static void init(Window win, CursorProvider provider) {
+        CursorsImpl.init(win, provider);
+    }
+
+    public static void setCursorType(CursorType type) {
+        CursorsImpl.setCursorType(type);
+    }
+    public static CursorType getCursorType() {
+        return CursorsImpl.getCursorType();
+    }
+    public static void setCursor(Cursor cursor) {
+        CursorsImpl.setCursor(cursor);
+    }
+    public static void setCursorProvider(CursorProvider provider) {
+        CursorsImpl.setCursorProvider(provider);
+    }
+}

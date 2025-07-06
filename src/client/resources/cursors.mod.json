@@ -17,15 +17,16 @@
     "environment": "client",
     "entrypoints": {
         "client": [
-            "oxded.cursors.Cursors"
+            "oxded.cursors.CursorsClient"
         ]
     },
     "mixins": [
-        "cursors.client.mixins.json"
+        "cursors.mixins.json"
     ],
     "depends": {
         "fabricloader": ">=0.16.10",
         "minecraft": "1.21.x",
-        "java": ">=17"
+        "java": ">=17",
+        "fabric-resource-loader-v0": "*"
     }
 }
