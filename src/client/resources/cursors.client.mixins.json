@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "oxded.cursors.mixin",
+	"package": "oxded.cursors.mixin.client",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
 		"ClickableWidgetMixin"

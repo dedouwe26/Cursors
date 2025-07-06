@@ -1,7 +1,7 @@
 {
     "schemaVersion": 1,
     "id": "cursors",
-    "version": "1.0.0",
+    "version": "${version}",
     "name": "Cursors",
     "description": "Cursors is a Minecraft mod and library that adds custom cursors to GUIs.",
     "authors": [
@@ -21,7 +21,10 @@
         ]
     },
     "mixins": [
-        "cursors.mixins.json"
+		{
+			"config": "cursors.client.mixins.json",
+			"environment": "client"
+		}
     ],
     "depends": {
         "fabricloader": ">=0.16.10",
