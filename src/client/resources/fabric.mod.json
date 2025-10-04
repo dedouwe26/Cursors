@@ -21,10 +21,7 @@
         ]
     },
     "mixins": [
-		{
-			"config": "cursors.client.mixins.json",
-			"environment": "client"
-		}
+        "cursors.mixins.json"
     ],
     "depends": {
         "fabricloader": ">=0.16.10",

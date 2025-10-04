@@ -8,33 +8,39 @@ import net.minecraft.client.util.Window;
 import oxded.cursors.api.Cursor;
 import oxded.cursors.api.CursorProvider;
 import oxded.cursors.api.CursorType;
+import oxded.cursors.api.WindowProvider;
 
 @Environment(EnvType.CLIENT)
 public final class CursorsImpl {
-	private static Window window;
     private static CursorType cursorType;
-    private static CursorProvider provider;
+    private static CursorProvider cursorProvider;
+    private static WindowProvider windowProvider;
 
-    public static void init(Window win, CursorProvider provider) {
-        window = win;
-        setCursorProvider(provider);
+    public static void init(CursorProvider cursorProvider, WindowProvider windowProvider) {
+        setCursorProvider(cursorProvider);
+        setWindowProvider(windowProvider);
+        setCursorType(CursorType.DEFAULT);
     }
+    
     public static Window getWindow() {
-        return window;
+        return windowProvider.getWindow();
     }
     public static void setCursorType(CursorType type) {
         cursorType = type;
-        setCursor(provider.getCursor(type));
+        setCursor(cursorProvider.getCursor(type));
     }
     public static CursorType getCursorType() {
         return cursorType;
     }
     public static void setCursor(Cursor cursor) {
         if (cursor instanceof CursorImpl impl) {
-            GLFW.glfwSetCursor(window.getHandle(), impl.createGlfwCursor());
+            GLFW.glfwSetCursor(getWindow().getHandle(), impl.createGlfwCursor());
         }
     }
     public static void setCursorProvider(CursorProvider provider) {
-
+        cursorProvider = provider;
+    }
+    private static void setWindowProvider(WindowProvider provider) {
+        windowProvider = provider;
     }
 }
