@@ -62,7 +62,7 @@ public final class CursorResources implements CursorProvider {
             xHot = object.get("xHot").getAsInt();
             yHot = object.get("yHot").getAsInt();
         } catch(Exception e) {
-            CursorsClient.LOGGER.warn("Could not get properties "+entry.getValue().toString(), e);
+            CursorsClient.LOGGER.warn("Could not get properties "+propertyIdentifier.toString(), e);
         }
 
         cursors.put(entry.getKey(), Cursor.create(image, xHot, yHot));
